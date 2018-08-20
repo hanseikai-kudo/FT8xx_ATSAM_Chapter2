@@ -2,3 +2,9 @@
 Debug/ft8xx_chapter.map
 Debug/ft8xx_chapter.lss
 Debug/ft8xx_chapter.elf
+Debug/ft8xx_chapter.bin
+Debug/ft8xx_chapter.eep
+Debug/ft8xx_chapter.srec
+Debug/makedep.mk
+Debug/Makefile
+*.d
