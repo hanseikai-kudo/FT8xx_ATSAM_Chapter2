@@ -228,19 +228,26 @@ int GpioPortInit( GPIO_INIT_TABLE *tbl )
 
 		value |= ((tbl->config & USE_GPIO_INPUT)==0 ? 0x00000000:WRCONFIG_INEN) 
 				| ((tbl->config & USE_GPIO_FORCE_PULL)==0 ? 0x00000000:WRCONFIG_PULLEN)
-				| ((tbl->config & USE_GPIO_DRIVE_STRONG)==0 ? 0x00000000:WRCONFIG_DRVSTR); 
+				| ((tbl->config & USE_GPIO_DRIVE_STRONG)==0 ? 0x00000000:WRCONFIG_DRVSTR)
+				| WRCONFIG_WRPINCFG; 
 	}
 
-	ptr->DIR.reg |= ( ((tbl->config & 0x80)==0?0x00000000:0x00000001) << (tbl->port & GPIO_BITMASK) );
+	ptr->DIR.reg |= ( ((tbl->config & USE_GPIO_OUTPUT)==0?0x00000000:0x00000001) << (tbl->port & GPIO_BITMASK) );
 
 //	port->WRCONFIG.reg = value;
 
 
 
-	value |= low ;
-	ptr->WRCONFIG.reg = (value | low);
+//	value |= low ;
 
-	ptr->WRCONFIG.reg = (value | hi | WRCONFIG_HWSEL);
+	if( (tbl->port & GPIO_BITMASK) >= 16 )
+	{
+		ptr->WRCONFIG.reg = (value | hi | WRCONFIG_HWSEL);
+	}
+	else
+	{
+		ptr->WRCONFIG.reg = (value | low );
+	}
 
 
   return 0;
@@ -258,10 +265,21 @@ int GpioBitOut( GPIO port,unsigned char bit )
 	ptr = GetPortOffset( port );
 	if( ptr == NULL )return -1;
 
-  value = ((bit & 0x01) == 0 ? 0x00000000 : 0x00000001);
+//	value = ((bit & 0x01) == 0 ? 0x00000000 : 0x00000001);
+//	value = ( value << (port & GPIO_BITMASK) );
+
+	value = 0x00000001;
   value = ( value << (port & GPIO_BITMASK) );
 
-	ptr->OUT.bit.OUT = value;
+	if( (bit & 0x01) )
+	{
+		ptr->OUTSET.bit.OUTSET = value;
+	}
+	else
+	{
+		ptr->OUTCLR.bit.OUTCLR = value;
+	}
+
   return 0;
 }
 
