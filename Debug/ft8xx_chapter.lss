@@ -15,23 +15,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   5 .comment      00000059  00000000  00000000  00020470  2**0
                   CONTENTS, READONLY
-  6 .debug_info   000114bc  00000000  00000000  000204c9  2**0
+  6 .debug_info   000114bb  00000000  00000000  000204c9  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00001639  00000000  00000000  00031985  2**0
+  7 .debug_abbrev 00001639  00000000  00000000  00031984  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_loc    00001548  00000000  00000000  00032fbe  2**0
+  8 .debug_loc    00001548  00000000  00000000  00032fbd  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_aranges 00000428  00000000  00000000  00034506  2**0
+  9 .debug_aranges 00000428  00000000  00000000  00034505  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_ranges 00000378  00000000  00000000  0003492e  2**0
+ 10 .debug_ranges 00000378  00000000  00000000  0003492d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_macro  00017c35  00000000  00000000  00034ca6  2**0
+ 11 .debug_macro  00017bff  00000000  00000000  00034ca5  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_line   00006b18  00000000  00000000  0004c8db  2**0
+ 12 .debug_line   00006b15  00000000  00000000  0004c8a4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    0008a941  00000000  00000000  000533f3  2**0
+ 13 .debug_str    0008a8d0  00000000  00000000  000533b9  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_frame  00000e8c  00000000  00000000  000ddd34  2**2
+ 14 .debug_frame  00000e8c  00000000  00000000  000ddc8c  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -6478,11 +6478,6 @@ int main (void)
     24e4:	2000      	movs	r0, #0
     24e6:	4c11      	ldr	r4, [pc, #68]	; (252c <STACK_SIZE+0x52c>)
     24e8:	47a0      	blx	r4
-			AnimetionTrans( ANIME_CMD_SET_SIZE, 7, &SpriteImage, 0, 0, woman[i].id_set + woman[i].dir );
-			AnimetionTrans( ANIME_CMD_SET_IMAGE, 7, &SpriteImage, 0, 0, woman[i].id_set + woman[i].dir );
-			AnimetionTrans( ANIME_CMD_POSITION, 7, &SpriteImage, woman[i].x , woman[i].y, woman[i].id_set + woman[i].dir );
-		}
-*/
 		for( i=0;i<COUNT_OF_MAN;i++ )
     24ea:	2300      	movs	r3, #0
     24ec:	22bb      	movs	r2, #187	; 0xbb
@@ -6676,11 +6671,11 @@ int main (void)
     2676:	2003      	movs	r0, #3
     2678:	4c3a      	ldr	r4, [pc, #232]	; (2764 <STACK_SIZE+0x764>)
     267a:	47a0      	blx	r4
-			AnimetionTrans( ANIME_CMD_SET_SIZE, 7, &SpriteImage, 0, 0, woman[i].id_set + woman[i].dir );
-			AnimetionTrans( ANIME_CMD_SET_IMAGE, 7, &SpriteImage, 0, 0, woman[i].id_set + woman[i].dir );
-			AnimetionTrans( ANIME_CMD_POSITION, 7, &SpriteImage, woman[i].x , woman[i].y, woman[i].id_set + woman[i].dir );
-		}
-*/
+
+//-------------------------
+		AnimetionTaskDriver( &SpriteImage );
+
+		AnimetionTrans( ANIME_CMD_START, 7, &SpriteImage, 0, 0, 0 );
 		for( i=0;i<COUNT_OF_MAN;i++ )
     267c:	23bb      	movs	r3, #187	; 0xbb
     267e:	009b      	lsls	r3, r3, #2

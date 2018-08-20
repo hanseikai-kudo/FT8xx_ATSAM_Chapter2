@@ -3820,7 +3820,7 @@ OUTPUT(ft8xx_chapter.elf elf32-littlearm)
  .comment       0x00000059       0x5a src/ASF/sam0/utils/syscalls/gcc/syscalls.o
  .comment       0x00000059       0x5a src/main.o
 
-.debug_info     0x00000000    0x114bc
+.debug_info     0x00000000    0x114bb
  .debug_info    0x00000000     0x2629 src/FT8XX.o
  .debug_info    0x00002629      0x247 src/FT8XX_jpeg.o
  .debug_info    0x00002870      0x7f7 src/user_clock.o
@@ -3831,7 +3831,7 @@ OUTPUT(ft8xx_chapter.elf elf32-littlearm)
  .debug_info    0x00008839     0x1274 src/ASF/sam0/drivers/system/clock/clock_samd21_r21_da/gclk.o
  .debug_info    0x00009aad     0x3a85 src/ASF/sam0/utils/cmsis/samd21/source/gcc/startup_samd21.o
  .debug_info    0x0000d532      0x41a src/ASF/sam0/utils/syscalls/gcc/syscalls.o
- .debug_info    0x0000d94c     0x3b70 src/main.o
+ .debug_info    0x0000d94c     0x3b6f src/main.o
 
 .debug_abbrev   0x00000000     0x1639
  .debug_abbrev  0x00000000      0x26d src/FT8XX.o
@@ -3896,7 +3896,7 @@ OUTPUT(ft8xx_chapter.elf elf32-littlearm)
  .debug_ranges  0x000002b0       0x50 src/ASF/sam0/utils/syscalls/gcc/syscalls.o
  .debug_ranges  0x00000300       0x78 src/main.o
 
-.debug_macro    0x00000000    0x17c35
+.debug_macro    0x00000000    0x17bff
  .debug_macro   0x00000000      0x592 src/FT8XX.o
  .debug_macro   0x00000592      0x16d src/FT8XX.o
  .debug_macro   0x000006ff      0x652 src/FT8XX.o
@@ -4028,10 +4028,10 @@ OUTPUT(ft8xx_chapter.elf elf32-littlearm)
  .debug_macro   0x000172bb       0x10 src/ASF/sam0/utils/syscalls/gcc/syscalls.o
  .debug_macro   0x000172cb       0x41 src/ASF/sam0/utils/syscalls/gcc/syscalls.o
  .debug_macro   0x0001730c      0x122 src/ASF/sam0/utils/syscalls/gcc/syscalls.o
- .debug_macro   0x0001742e      0x626 src/main.o
- .debug_macro   0x00017a54      0x1e1 src/main.o
+ .debug_macro   0x0001742e      0x5f0 src/main.o
+ .debug_macro   0x00017a1e      0x1e1 src/main.o
 
-.debug_line     0x00000000     0x6b18
+.debug_line     0x00000000     0x6b15
  .debug_line    0x00000000      0xd29 src/FT8XX.o
  .debug_line    0x00000d29      0xb7f src/FT8XX_jpeg.o
  .debug_line    0x000018a8      0xb9b src/user_clock.o
@@ -4042,9 +4042,9 @@ OUTPUT(ft8xx_chapter.elf elf32-littlearm)
  .debug_line    0x00004767      0xb6e src/ASF/sam0/drivers/system/clock/clock_samd21_r21_da/gclk.o
  .debug_line    0x000052d5      0x650 src/ASF/sam0/utils/cmsis/samd21/source/gcc/startup_samd21.o
  .debug_line    0x00005925      0x3d8 src/ASF/sam0/utils/syscalls/gcc/syscalls.o
- .debug_line    0x00005cfd      0xe1b src/main.o
+ .debug_line    0x00005cfd      0xe18 src/main.o
 
-.debug_str      0x00000000    0x8a941
+.debug_str      0x00000000    0x8a8d0
  .debug_str     0x00000000    0x84a5c src/FT8XX.o
                               0x85346 (size before relaxing)
  .debug_str     0x00084a5c       0x45 src/FT8XX_jpeg.o
@@ -4065,8 +4065,8 @@ OUTPUT(ft8xx_chapter.elf elf32-littlearm)
                               0x6b014 (size before relaxing)
  .debug_str     0x00089512      0x74d src/ASF/sam0/utils/syscalls/gcc/syscalls.o
                                0x6818 (size before relaxing)
- .debug_str     0x00089c5f      0xce2 src/main.o
-                              0x86d7c (size before relaxing)
+ .debug_str     0x00089c5f      0xc71 src/main.o
+                              0x86ccb (size before relaxing)
 
 .debug_frame    0x00000000      0xe8c
  .debug_frame   0x00000000      0x230 src/FT8XX.o
