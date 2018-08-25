@@ -18,8 +18,8 @@
 
 
 #define CHAPTER_8B 0
-#define CHAPTER_10A 0
-#define CHAPTER_11B 1
+#define CHAPTER_10A 1
+#define CHAPTER_11B 0
 
 #if CHAPTER_8B
 
@@ -200,9 +200,10 @@ const unsigned long offset_list[]=
 
 const unsigned char demo_mapchip[]=
 {
-	#include "pipo-map001_256x256.binh"
+	#include "pipo-map001_256x256b.binh"
 };
-#define SIZE_OF_DEMO_MAPCHIP (0x6270)
+//#define SIZE_OF_DEMO_MAPCHIP (0x6270)
+#define SIZE_OF_DEMO_MAPCHIP (0x99A0)
 
 
 unsigned char map[GRID_Y][GRID_X];
