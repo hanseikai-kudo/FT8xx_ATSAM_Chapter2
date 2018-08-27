@@ -18,8 +18,8 @@
 
 
 #define CHAPTER_8B 0
-#define CHAPTER_10A 1
-#define CHAPTER_11B 0
+#define CHAPTER_10A 0
+#define CHAPTER_11B 1
 
 #if CHAPTER_8B
 
@@ -210,7 +210,7 @@ unsigned char map[GRID_Y][GRID_X];
 
 const unsigned char FieldMap[64*64]=
 {
-	#include "test3.map"
+	#include "test3b.map"
 };
 
 
